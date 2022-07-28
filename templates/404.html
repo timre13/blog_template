@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/srcery.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+    <script src="/static/script.js"></script>
+    <title> {{mainSiteTitle}} :: 404 Not Found </title>
+</head>
+<body onload="main();">
+    <header>
+        <div>
+            <a href="/" title="Home">~</a>
+        </div>
+    </header>
+    <div id="content">
+        <h1>404 Not Found</h1>
+        <a href="/" title="Home">Click here to go home</a>
+    </div>
+    <footer>
+        Copyright {{ copyrightYear }} {{ copyrightHolder }}
+        <br>Template by <a href="https://github.com/timre13">timre13</a>
+    </footer>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

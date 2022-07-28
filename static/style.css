@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
+body {
+    background-color: #24211e;
+    font-family: monospace;
+    text-align: justify;
+    line-height: 1.5;
+    color: #bdcfb5;
+    text-shadow: -0.04em 0 0.5px rgba(255, 200, 100, 0.9);
+    font-weight: lighter;
+    overflow-x: hidden;
+}
+
+pre, code {
+    font-weight: normal;
+    font-family: 'Fira Code', monospace;
+    text-shadow: none;
+}
+
+pre {
+    max-width: 95%;
+    margin: auto auto;
+}
+
+code {
+    background-image: linear-gradient(rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 0.01) 50%) !important;
+    background-position: 50px 2.5em !important;
+    background-repeat: repeat !important;
+    background-size: 1em 3em !important;
+}
+
+#content {
+    margin: 50px 20% 100px 20%;
+    animation: fade-in 1.2s;
+}
+
+@media (prefers-reduced-motion) {
+    #content {
+        animation: none;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        filter: blur(2px);
+        transform: scale(0.99)
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+header {
+    width: 100%;
+    background-color: #151412;
+    margin-bottom: 50px;
+    padding-left: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+header div {
+    display: inline;
+    position: relative;
+}
+
+header a {
+    color:rgba(255, 200, 100);
+    text-decoration: none;
+    text-transform: lowercase;
+    transition: 0.1s;
+}
+
+header div .dropdown-list {
+    display: none;
+    position: absolute;
+    top: 1em;
+    left: -10px;
+    background-color: #151412;
+    min-width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    z-index: 99;
+    border-style: solid;
+    border-color: gray;
+    border-width: 0 1px 1px 1px;
+}
+
+header div .dropdown-list a {
+    display: block;
+    width: 100%;
+}
+
+header div:hover .dropdown-list {
+    display: block;
+}
+
+header a.curr {
+    font-weight: bold;
+}
+
+header a:hover {
+    color:rgba(255, 235, 197);
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+header .sep::after {
+    content: "|";
+    color: gray;
+    text-shadow: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: rgb(57, 219, 57);
+    text-shadow: -0.04em 0 0.5px rgba(136, 69, 172, 0.9);
+}
+
+h1::after {
+    content: " ⎯";
+    animation: cursor;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+    animation-duration: 1.5s;
+    opacity: 0;
+}
+
+h1 {
+    text-transform: lowercase;
+}
+
+@keyframes cursor {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+#content a {
+    color: rgb(150, 51, 172);
+    text-decoration: none;
+    font-weight: normal;
+    transition: ease-in-out 0.2s;
+}
+
+#content a:hover {
+    color: rgb(47, 174, 98);
+    text-shadow: 0.04em -0.04em 1px rgba(255, 200, 100, 0.9);
+}
+
+#content img:not(.gallery-img) {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    align-content: center;
+    cursor: pointer;
+    max-width: 95%;
+}
+
+#content img.gallery-img {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    cursor: default;
+    max-height: 90%;
+    max-width: 95%;
+    background-color: white;
+    border: 1px dashed black;
+}
+
+footer {
+    margin-top: 200px;
+    margin-bottom: 20px;
+    text-align: center;
+    text-decoration: solid;
+    text-decoration-line: overline;
+    text-decoration-color: rgba(255, 200, 100, 0.7);
+}
+
+footer a {
+    text-shadow: none;
+}
+
+#gallerybg {
+    display: none;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: #181816;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    cursor: pointer;
+}
