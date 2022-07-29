@@ -55,7 +55,7 @@ globalVals = {
 }
 
 app = Flask(__name__)
-md = Markdown(app)
+md = Markdown(app, extensions=["fenced_code"])
 
 @app.route("/", defaults={"path": "index"})
 @app.route("/<path:path>")
