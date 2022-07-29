@@ -34,10 +34,7 @@
     </header>
     <div id="gallerybg"></div>
     <div id="content">
-        <h1>{{ contentTitle }}</h1>
-        {% for paragraph in content %}
-            <p>{{ paragraph|safe }}</p>
-        {% endfor %}
+        {{ content|markdown }}
     </div>
     <footer>
         Copyright {{ copyrightYear }} {{ copyrightHolder }}

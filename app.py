@@ -1,4 +1,5 @@
 from flask import Flask, render_template, redirect
+from flaskext.markdown import Markdown
 import datetime
 import json
 
@@ -54,6 +55,7 @@ globalVals = {
 }
 
 app = Flask(__name__)
+md = Markdown(app)
 
 @app.route("/", defaults={"path": "index"})
 @app.route("/<path:path>")
@@ -64,13 +66,25 @@ def renderPage(path):
 
     # The 404 page has a special template
     if path == "404":
-        return render_template("404.html", **globalVals), 404
+        return render_template("404.html", **globalVals)
 
     try:
-        confPath = "pages/"+path+".json"
-        confFile = open(confPath, "r")
-        pageConf = json.load(confFile)
-        confFile.close()
+        docPath = "pages/"+path+".md"
+        docFile = open(docPath, "r")
+        pageMarkdown = docFile.read()
+        docFile.close()
+
+        firstLine = pageMarkdown.splitlines()[0]
+        if not firstLine.startswith("# "):
+            print("ERR: Title is not specified in document "+docPath)
+            pageTitle = ""
+        else:
+            pageTitle = firstLine.removeprefix("#").strip().capitalize()
+
+        pageConf = {"pageTitle": pageTitle, "content": pageMarkdown}
         return render_template("template.html", **globalVals, **pageConf)
     except FileNotFoundError:
         return redirect("/404")
+
+if __name__ == "__main__":
+    app.run(debug=True, port=8000, use_reloader=True)

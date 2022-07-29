@@ -3,7 +3,7 @@
     "copyrightHolder": "timre13",
     "menu": [
         {"shortName": "~", "longName": "Home", "href": "/"},
-        {"shortName": "proj", "longName": "Projects"},
+        {"shortName": "proj", "longName": "Projects", "href": "/proj"},
         {"shortName": "prog", "longName": "Programming", "href": "/prog"},
         {"shortName": "linux", "longName": "Linux"},
         {"shortName": "hardware", "longName": "Hardware"},

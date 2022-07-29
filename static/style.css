@@ -17,12 +17,16 @@ pre, code {
     text-shadow: none;
 }
 
+code {
+    background: rgba(147, 147, 147, 0.1);
+}
+
 pre {
     max-width: 95%;
     margin: auto auto;
 }
 
-code {
+pre code {
     background-image: linear-gradient(rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 0.01) 50%) !important;
     background-position: 50px 2.5em !important;
     background-repeat: repeat !important;
@@ -120,7 +124,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1::after {
-    content: " ⎯";
+    content: "⎯";
     animation: cursor;
     animation-delay: 1s;
     animation-iteration-count: infinite;
@@ -209,4 +213,16 @@ footer a {
     height: 100vh;
     z-index: 100;
     cursor: pointer;
+}
+
+blockquote {
+    padding: 8px;
+    font-family: 'Courier New', Courier, monospace;
+    background: rgba(147, 147, 147, 0.05);
+    font-style: italic;
+}
+
+blockquote p {
+    margin: 0;
+    padding: 0;
 }
