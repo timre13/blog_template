@@ -36,7 +36,7 @@
     <div id="content">
         <h1>{{ contentTitle }}</h1>
         {% for paragraph in content %}
-            <p>{{ paragraph }}</p>
+            <p>{{ paragraph|safe }}</p>
         {% endfor %}
     </div>
     <footer>
