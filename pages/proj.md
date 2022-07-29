@@ -86,6 +86,25 @@ Test paragraph, **bold**, *italic*
 
 ```
 
+assembly:
+
+```x86asm
+section .text
+
+    xor eax, eax
+
+    mov ebx, 12
+    xor rsi, rsi
+
+loop:
+    mov [rsi], ebx
+    inc rsi
+    add ebx, 2
+
+    cmp ebx, 34
+    jne loop
+```
+
 here is an image
 
 ![alt text](/static/img/anime-glasses.jpg)
