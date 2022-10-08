@@ -36,6 +36,7 @@ pre code {
 #content {
     margin: 50px 20% 100px 20%;
     animation: fade-in 1.2s;
+    min-height: 60vh;
 }
 
 @media (prefers-reduced-motion) {
