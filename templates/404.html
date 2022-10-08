@@ -21,8 +21,9 @@
         <a href="/" title="Home">Click here to go home</a>
     </div>
     <footer>
-        Copyright {{ copyrightYear }} {{ copyrightHolder }}
-        <br>Template by <a href="https://github.com/timre13" target="_blank">timre13</a>
+        <p>Copyright {{ copyrightYear }} {{ copyrightHolder }}</p>
+        <p>Template by <a href="https://github.com/timre13" target="_blank">timre13</a></p>
+        <p style="font-size: 8px; font-weight: lighter;">Rendered in {{ g.getReqTime() }}</p>
     </footer>
 </body>
 </html>

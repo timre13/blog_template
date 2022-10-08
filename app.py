@@ -1,7 +1,8 @@
-from flask import Flask, render_template, redirect
+from flask import Flask, render_template, redirect, g
 from flaskext.markdown import Markdown
 import datetime
 import json
+import time
 
 CONFIG_PATH = "config.json"
 
@@ -56,6 +57,11 @@ globalVals = {
 
 app = Flask(__name__)
 md = Markdown(app, extensions=["fenced_code"])
+
+@app.before_request
+def beforeRequest():
+    g.reqStartTime = time.time()
+    g.getReqTime = lambda: ("%.2f ms" % ((time.time() - g.reqStartTime)*1000))
 
 @app.route("/", defaults={"path": "index"})
 @app.route("/<path:path>")

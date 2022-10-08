@@ -191,12 +191,17 @@ h1 {
 }
 
 footer {
-    margin-top: 200px;
+    margin: 0 auto;
+    width: 20%;
+    margin-top: 100px;
     margin-bottom: 20px;
     text-align: center;
-    text-decoration: solid;
-    text-decoration-line: overline;
-    text-decoration-color: rgba(255, 200, 100, 0.7);
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 200, 100, 0.7);
+}
+
+footer p {
+    margin: 0;
 }
 
 footer a {
