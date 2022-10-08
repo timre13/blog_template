@@ -1,18 +1,7 @@
 {
-    "mainSiteTitle": "Mike's website",
-    "copyrightHolder": "timre13",
+    "mainSiteTitle": "Your Website",
+    "copyrightHolder": "Your Name",
     "menu": [
-        {"shortName": "~", "longName": "Home", "href": "/"},
-        {"shortName": "proj", "longName": "Projects", "href": "/proj"},
-        {"shortName": "prog", "longName": "Programming", "href": "/prog"},
-        {"shortName": "linux", "longName": "Linux"},
-        {"shortName": "hardware", "longName": "Hardware"},
-        {"shortName": "web", "longName": "Web development"},
-        {"shortName": "net", "longName": "Networking"},
-        {"shortName": "misc", "longName": "Misc.", "subItems": [
-            {"shortName": "music", "longName": "Music", "href": "/misc/music"},
-            {"shortName": "films", "longName": "Films"}
-        ]},
-        {"shortName": "about", "longName": "About & Contact", "href": "/about"}
+        {"shortName": "~", "longName": "Home", "href": "/"}
     ]
 }
