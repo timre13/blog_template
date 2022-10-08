@@ -10,8 +10,13 @@ function showImage(elem) {
     document.body.style.overflowY = "hidden";
 
     // Display image info
-    const url = new URL(elem.src);
-    const relUrl = url.toString().substring(url.origin.length+1);
+    const imgUrl = new URL(elem.src);
+    const pageUrl = new URL(window.location.href);
+    var relUrl = imgUrl.toString();
+    // If the image is on this server, display a relative location
+    if (imgUrl.host == pageUrl.host) {
+        relUrl = relUrl.substring(imgUrl.origin.length);
+    }
     document.getElementById("gallerybg").innerText
         = "Name: "+relUrl
         + "\nDimensions: "+elem.width.toString()+"x"+elem.height.toString();
